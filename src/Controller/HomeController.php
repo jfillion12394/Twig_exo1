@@ -21,6 +21,17 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+       
+        header('Location:/home/showProducts/');
+
         return $this->twig->render('Home/index.html.twig');
+        
+    }
+
+    public function showProducts()
+    {
+        $products = ['guitare', 'bass', 'bonjo', 'cithare', 'lyre'];
+
+        return $this->twig->render('Home/products.html.twig',  ['products' =>  $products]);
     }
 }

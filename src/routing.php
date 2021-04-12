@@ -15,8 +15,14 @@ $controller = 'App\Controller\\' . ucfirst($routeParts[0] ?? '') . 'Controller';
 $method = $routeParts[1] ?? '';
 $vars = array_slice($routeParts, 2);
 
+
+
+//echo var_dump($routeParts);
+
 if (class_exists($controller) && method_exists(new $controller(), $method)) {
     echo (new $controller())->$method(...$vars);
+
+
 } else {
     header("HTTP/1.0 404 Not Found");
     echo '404 - Page not found';

@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block content %}
+<h1> Products </h1>
+
+
+<h2>
+<ul>
+{% for i in range(0, 2) %}
+    {{  products[i] }} /
+{% endfor %}
+</ul>
+<ul>
+{% for i in range(3, 5) %}
+   {{  products[i] }} /
+{% endfor %}
+</ul>
+</h2>
+   
+
+
+
+
+  {{ dump(products) }}
+
+{% endblock %}
+
+
